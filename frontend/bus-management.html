@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bus Management</title>
+		<link rel="stylesheet" href="dashboard.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	</head>
+
+	<body>
+
+		<div class="dashboard">
+
+			<aside class="sidebar">
+
+				<div class="logo">
+					<i class="fa-solid fa-bus"></i>
+					<span>TransitOps</span>
+				</div>
+
+				<ul class="menu">
+
+					<li id="dashboard-link">
+						<i class="fa-solid fa-house"></i>
+						<span>Dashboard</span>
+					</li>
+
+					<li class="active" id="bus-link">
+						<i class="fa-solid fa-bus"></i>
+						<span>Bus Management</span>
+					</li>
+
+					<li id="drivers-link">
+						<i class="fa-solid fa-user"></i>
+						<span>Drivers</span>
+					</li>
+
+					<li id="routes-link">
+						<i class="fa-solid fa-route"></i>
+						<span>Routes</span>
+					</li>
+
+					<li id="trips-link">
+						<i class="fa-solid fa-location-dot"></i>
+						<span>Trips</span>
+					</li>
+
+					<li id="analytics-link">
+						<i class="fa-solid fa-chart-line"></i>
+						<span>Analytics</span>
+					</li>
+
+					<li id="settings-link">
+						<i class="fa-solid fa-gear"></i>
+						<span>Settings</span>
+					</li>
+
+				</ul>
+
+				<div class="logout" id="logout">
+					<i class="fa-solid fa-right-from-bracket"></i>
+					<span>Logout</span>
+				</div>
+
+			</aside>
+
+			<main class="main-content">
+
+				<header class="navbar">
+
+					<div class="nav-left">
+						<h2>Bus Management</h2>
+					</div>
+
+					<div class="nav-right">
+
+						<div class="search-box">
+							<i class="fa-solid fa-magnifying-glass"></i>
+							<input type="text" placeholder="Search buses...">
+						</div>
+
+						<div class="notification">
+							<i class="fa-solid fa-bell"></i>
+							<span class="badge">3</span>
+						</div>
+
+						<div class="profile">
+							<img src="dhara.jpeg" alt="Admin">
+
+							<div>
+								<h4>Admin - Dhara Savjani</h4>
+								<p>Transport Manager</p>
+							</div>
+
+						</div>
+
+					</div>
+
+				</header>
+
+				<section class="page-header">
+
+					<div class="page-title">
+
+						<p>
+							Manage buses, fleet details, maintenance status and availability.
+						</p>
+
+					</div>
+
+					<div class="page-actions">
+
+						<button class="export-btn">
+							<i class="fa-solid fa-download"></i>
+							Export
+						</button>
+
+						<button class="add-btn">
+							<i class="fa-solid fa-plus"></i>
+							Add Bus
+						</button>
+
+					</div>
+
+				</section>
+
+				<section class="cards">
+
+					<div class="card">
+
+						<div class="card-header">
+
+							<div class="card-icon bus">
+								<i class="fa-solid fa-bus"></i>
+							</div>
+
+							<span>Fleet</span>
+
+						</div>
+
+						<h3>Total Buses</h3>
+
+						<h1>125</h1>
+
+					</div>
+
+					<div class="card">
+
+						<div class="card-header">
+
+							<div class="card-icon success">
+								<i class="fa-solid fa-circle-check"></i>
+							</div>
+
+							<span>Available</span>
+
+						</div>
+
+						<h3>Active Buses</h3>
+
+						<h1>108</h1>
+
+					</div>
+
+					<div class="card">
+
+						<div class="card-header">
+
+							<div class="card-icon delay">
+								<i class="fa-solid fa-screwdriver-wrench"></i>
+							</div>
+
+							<span>Service</span>
+
+						</div>
+
+						<h3>Maintenance</h3>
+
+						<h1>12</h1>
+
+					</div>
+
+					<div class="card">
+
+						<div class="card-header">
+
+							<div class="card-icon route">
+								<i class="fa-solid fa-road"></i>
+							</div>
+
+							<span>Routes</span>
+
+						</div>
+
+						<h3>Assigned Routes</h3>
+
+						<h1>42</h1>
+
+					</div>
+
+				</section>
+
+				<section class="table-section">
+
+					<div class="table-header">
+
+						<h2>Fleet Details</h2>
+
+						<div class="table-actions">
+
+							<input
+								type="text"
+								placeholder="Search Bus Number..."
+								class="table-search"
+							>
+
+							<select class="filter">
+
+								<option>All Status</option>
+								<option>Available</option>
+								<option>Running</option>
+								<option>Maintenance</option>
+								<option>Inactive</option>
+
+							</select>
+
+							<select class="filter">
+
+								<option>All Routes</option>
+								<option>Route A</option>
+								<option>Route B</option>
+								<option>Route C</option>
+								<option>Route D</option>
+
+							</select>
+
+						</div>
+
+					</div>
+                    						<table>
+
+							<thead>
+
+								<tr>
+
+									<th>Bus ID</th>
+									<th>Bus Number</th>
+									<th>Model</th>
+									<th>Capacity</th>
+									<th>Assigned Route</th>
+									<th>Driver</th>
+									<th>Status</th>
+									<th>Last Service</th>
+									<th>Actions</th>
+
+								</tr>
+
+							</thead>
+
+							<tbody>
+
+								<tr>
+
+									<td>B001</td>
+									<td>GJ01AB1234</td>
+									<td>Volvo 9400</td>
+									<td>52</td>
+									<td>Route A</td>
+									<td>Rahul Sharma</td>
+
+									<td>
+										<span class="status available">
+											Available
+										</span>
+									</td>
+
+									<td>08 Jul 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>B002</td>
+									<td>GJ01CD4567</td>
+									<td>Tata Starbus</td>
+									<td>45</td>
+									<td>Route B</td>
+									<td>Mehul Patel</td>
+
+									<td>
+										<span class="status running">
+											Running
+										</span>
+									</td>
+
+									<td>05 Jul 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>B003</td>
+									<td>GJ05EF7654</td>
+									<td>Ashok Leyland</td>
+									<td>50</td>
+									<td>Route C</td>
+									<td>Amit Shah</td>
+
+									<td>
+										<span class="status maintenance">
+											Maintenance
+										</span>
+									</td>
+
+									<td>01 Jul 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>B004</td>
+									<td>GJ18GH9021</td>
+									<td>Eicher Skyline</td>
+									<td>40</td>
+									<td>Route D</td>
+									<td>Neha Joshi</td>
+
+									<td>
+										<span class="status available">
+											Available
+										</span>
+									</td>
+
+									<td>10 Jul 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>B005</td>
+									<td>GJ27JK3321</td>
+									<td>Volvo 8400</td>
+									<td>48</td>
+									<td>Route E</td>
+									<td>Priya Desai</td>
+
+									<td>
+										<span class="status inactive">
+											Inactive
+										</span>
+									</td>
+
+									<td>28 Jun 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>B006</td>
+									<td>GJ03LM7788</td>
+									<td>Tata LP 912</td>
+									<td>44</td>
+									<td>Route F</td>
+									<td>Karan Mehta</td>
+
+									<td>
+										<span class="status running">
+											Running
+										</span>
+									</td>
+
+									<td>06 Jul 2026</td>
+
+									<td>
+
+										<button class="action-btn view-btn">
+											<i class="fa-solid fa-eye"></i>
+										</button>
+
+										<button class="action-btn edit-btn">
+											<i class="fa-solid fa-pen"></i>
+										</button>
+
+										<button class="action-btn delete-btn">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+						<div class="pagination">
+
+							<button class="page-btn">
+								<i class="fa-solid fa-angle-left"></i>
+							</button>
+
+							<button class="page-btn active">
+								1
+							</button>
+
+							<button class="page-btn">
+								2
+							</button>
+
+							<button class="page-btn">
+								3
+							</button>
+
+							<button class="page-btn">
+								4
+							</button>
+
+							<button class="page-btn">
+								<i class="fa-solid fa-angle-right"></i>
+							</button>
+
+						</div>
+
+					</section>
+
+				</main>
+
+			</div>
+
+			<script src="dashboard.js"></script>
+
+	</body>
+
+</html>
