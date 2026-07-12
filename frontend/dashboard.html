@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+
+        <div class="dashboard">
+            <aside class="sidebar">
+                <div class="logo">
+                    <i class="fa-solid fa-bus"></i>
+                    <span>TransitOps</span>
+                </div>
+
+                <ul class="menu">
+
+                    <li class="active" id="dashboard-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+
+                    <li id="bus-link">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Bus Management</span>
+                    </li>
+
+                    <li id="drivers-link">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Drivers</span>
+                    </li>
+
+                    <li id="routes-link">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </li>
+
+                    <li id="trips-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Trips</span>
+                    </li>
+
+                    <li id="analytics-link">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </li>
+
+                    <li id="settings-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </li>
+
+                </ul>
+
+                <div class="logout" id="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+
+                </div>
+            </aside>
+            <main class="main-content">
+                <header class="navbar">
+                    <button id="menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="nav-left">
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div class="nav-right">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search buses, drivers, routes...">
+                        </div>
+                        <div class="notification">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="badge">3</span>
+                        </div>
+                        <div class="profile">
+                            <img src="dhara.jpeg" alt="Admin">
+                            <div>
+                                <h4>Admin - Dhara Savjani</h4>
+                                <p>Transport Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section class="welcome">
+                    <div class="welcome-left">
+                        <h1 id="greeting">Welcome Back, Admin 👋</h1>
+                        <p>
+                            Manage buses, drivers, routes and monitor
+                            transport operations from one place.
+                        </p>
+
+                        <p id="current-date"></p>
+                    </div>
+                    <div class="welcome-right">
+                        <button class="new-trip" id="new-trip">
+                            <i class="fa-solid fa-plus"></i>
+                            New Trip
+                        </button>
+                    </div>
+                </section>
+                <section class="cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon bus">
+                                <i class="fa-solid fa-bus"></i>
+                            </div>
+                            <span>+12%</span>
+                        </div>
+                        <h3>Total Buses</h3>
+                        <h1 id="buses">125</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon driver">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span>+5%</span>
+                        </div>
+                        <h3>Active Drivers</h3>
+                        <h1 id="drivers">87</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon route">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <span>+3%</span>
+                        </div>
+                        <h3>Routes</h3>
+                        <h1 id="routes">42</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon trip">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>Live</span>
+                        </div>
+                        <h3>Active Trips</h3>
+                        <h1 id="trips">156</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon delay">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <span>-2%</span>
+                        </div>
+                        <h3>Delayed Trips</h3>
+                        <h1 id="delayedTrips">15</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon success">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <span>Excellent</span>
+                        </div>
+                        <h3>On-Time Rate</h3>
+                        <h1>98%</h1>
+                    </div>
+                </section>
+                <section class="bottom-content">
+                    <div class="trip-panel">
+                        <div class="panel-title">
+                            <h2>Recent Trips</h2>
+                            <a href="#" id="view-all-trips">View All</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bus</th>
+                                    <th>Route</th>
+                                    <th>Driver</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bus 101</td>
+                                    <td>Route A</td>
+                                    <td>Rahul</td>
+                                    <td>
+                                        <span class="running">
+                                            Running
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bus 205</td>
+                                    <td>Route C</td>
+                                    <td>Mehul</td>
+                                    <td>
+                                        <span class="ontime">
+                                            On Time
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bus 302</td>
+                                    <td>Route B</td>
+                                    <td>Amit</td>
+                                    <td>
+                                        <span class="delay-status">
+                                            Delayed
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bus 420</td>
+                                    <td>Route D</td>
+                                    <td>Neha</td>
+                                    <td>
+                                        <span class="running">
+                                            Running
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="alert-panel">
+                        <div class="panel-title">
+                            <h2>Recent Alerts</h2>
+                        </div>
+                        <div class="alert">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <h4>Route 12 Delayed</h4>
+                                <p>Heavy traffic near City Center</p>
+                            </div>
+                        </div>
+                        <div class="alert">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <div>
+                                <h4>Bus 305 Maintenance</h4>
+                                <p>Scheduled service at 3:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="alert">
+                            <i class="fa-solid fa-road"></i>
+                            <div>
+                                <h4>Road Closed</h4>
+                                <p>Use alternate route for Bus 220</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="dashboard.js"></script>
+    </body>
+</html>
